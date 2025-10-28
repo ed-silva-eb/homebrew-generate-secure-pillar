@@ -5,13 +5,13 @@
 class GenerateSecurePillar < Formula
   desc "Create and update encrypted content or decrypt encrypted content in YAML files"
   homepage "https://github.com/Everbridge/generate-secure-pillar"
-  version "1.0.634"
+  version "1.0.640"
 
   depends_on "gpg1"
 
   on_macos do
-    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.634/generate-secure-pillar_1.0.634_darwin_all.tar.gz"
-    sha256 "6af637def209786082a35a61389fc93a1b944a4753440129f657351a9acc4034"
+    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_darwin_all.tar.gz"
+    sha256 "6dbb0c132460ad2c66d59bfe8ed7e40e66201c03d0d63d35b097c91c892734b7"
 
     def install
       bin.install "generate-secure-pillar"
@@ -19,24 +19,18 @@ class GenerateSecurePillar < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.634/generate-secure-pillar_1.0.634_linux_amd64.tar.gz"
-        sha256 "af30918be49733038c1be58d7ae175b30d99863dd50236ec84d0cea0c0cd5f57"
-
-        def install
-          bin.install "generate-secure-pillar"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_linux_amd64.tar.gz"
+      sha256 "eefc20344a92ea1e96ea2e60751a3f4956a43c247d897f4f1b5c9d5d9f94ac91"
+      def install
+        bin.install "generate-secure-pillar"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.634/generate-secure-pillar_1.0.634_linux_arm64.tar.gz"
-        sha256 "480786e810e57106d521e85d7bbd43e19823858cd6575c61898d5e5de0c91e42"
-
-        def install
-          bin.install "generate-secure-pillar"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_linux_arm64.tar.gz"
+      sha256 "988a339bff19060e5a6f12b968dbac87fa7e82ef32397e59432590d0ab341f55"
+      def install
+        bin.install "generate-secure-pillar"
       end
     end
   end
