@@ -5,13 +5,13 @@
 class GenerateSecurePillar < Formula
   desc "Create and update encrypted content or decrypt encrypted content in YAML files"
   homepage "https://github.com/Everbridge/generate-secure-pillar"
-  version "2.0.0"
+  version "2.0.1"
 
   depends_on "gpg1"
 
   on_macos do
-    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_darwin_all.tar.gz"
-    sha256 "61135771e86c8690b707733cc46f26a77f011208b61fa9e828cc64653eed4db3"
+    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.1/generate-secure-pillar_2.0.1_darwin_all.tar.gz"
+    sha256 "3a29e5c15162ff4b4d9d4598d35e205831e578f5f119127d0ef69d9556962f14"
 
     define_method(:install) do
       bin.install "generate-secure-pillar"
@@ -20,15 +20,15 @@ class GenerateSecurePillar < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_linux_amd64.tar.gz"
-      sha256 "ef67ce8e311ba5b1c3ce7aea1c575aefa99f5e2071f04bb1eaacbe47975b45c5"
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.1/generate-secure-pillar_2.0.1_linux_amd64.tar.gz"
+      sha256 "d64ab76735e0464d8ebe9c5d7a9e1254b1a14602dc846808521f483566b949aa"
       define_method(:install) do
         bin.install "generate-secure-pillar"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_linux_arm64.tar.gz"
-      sha256 "f553a6b6795f3ca1f0a546ea038d80b40b78077ce44b5558de04dd21abd42f5c"
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.1/generate-secure-pillar_2.0.1_linux_arm64.tar.gz"
+      sha256 "753bc258a0116ad0c8e256766adc29327a2e9c6a73dc23ba76a4b66781266c7b"
       define_method(:install) do
         bin.install "generate-secure-pillar"
       end
