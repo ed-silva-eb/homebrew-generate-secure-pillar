@@ -5,31 +5,31 @@
 class GenerateSecurePillar < Formula
   desc "Create and update encrypted content or decrypt encrypted content in YAML files"
   homepage "https://github.com/Everbridge/generate-secure-pillar"
-  version "1.0.640"
+  version "2.0.0"
 
   depends_on "gpg1"
 
   on_macos do
-    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_darwin_all.tar.gz"
-    sha256 "6dbb0c132460ad2c66d59bfe8ed7e40e66201c03d0d63d35b097c91c892734b7"
+    url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_darwin_all.tar.gz"
+    sha256 "61135771e86c8690b707733cc46f26a77f011208b61fa9e828cc64653eed4db3"
 
-    def install
+    define_method(:install) do
       bin.install "generate-secure-pillar"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_linux_amd64.tar.gz"
-      sha256 "eefc20344a92ea1e96ea2e60751a3f4956a43c247d897f4f1b5c9d5d9f94ac91"
-      def install
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_linux_amd64.tar.gz"
+      sha256 "ef67ce8e311ba5b1c3ce7aea1c575aefa99f5e2071f04bb1eaacbe47975b45c5"
+      define_method(:install) do
         bin.install "generate-secure-pillar"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v1.0.640/generate-secure-pillar_1.0.640_linux_arm64.tar.gz"
-      sha256 "988a339bff19060e5a6f12b968dbac87fa7e82ef32397e59432590d0ab341f55"
-      def install
+      url "https://github.com/Everbridge/generate-secure-pillar/releases/download/v2.0.0/generate-secure-pillar_2.0.0_linux_arm64.tar.gz"
+      sha256 "f553a6b6795f3ca1f0a546ea038d80b40b78077ce44b5558de04dd21abd42f5c"
+      define_method(:install) do
         bin.install "generate-secure-pillar"
       end
     end
